@@ -250,7 +250,7 @@ default_mode "locked"
 a
 default_shell "/usr/bin/fish"
 // default_cwd "/tmp"
-default_layout "custom" //compact
+default_layout "compact" //compact
 // layout_dir "/tmp"
 // theme_dir "/tmp"
 mouse_mode true

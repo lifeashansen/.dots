@@ -4,7 +4,7 @@ import = [
 ]
 
 [terminal]
-shell = "/usr/bin/zsh"
+shell = "/usr/bin/tmux"
 
 [env]
 TERM = "xterm-256color"
@@ -20,17 +20,12 @@ dynamic_title = false
 title = "Alacritty"
 
 [font]
-size = 11.25
+size =12.5
 
-normal = { family = "VictorMono NFM",style =  "Regular" }
-bold = { family = "VictorMono NFM", style = "Bold" }
-italic = { family = "VictorMono NFM", style = "Italic" }
-bold_italic = { family = "VictorMono NFM", style = "Bold Italic" }
-# normal = { family = "VictorMono Nerd Font",style =  "Regular" }
-# bold = { family = "VictorMono Nerd Font", style = "Bold" }
-# italic = { family = "VictorMono Nerd Font", style = "Italic" }
-# bold_italic = { family = "VictorMono Nerd Font", style = "Bold Italic" }
-
+normal = { family = "Iosevka Nerd Font Mono",style =  "Regular" }
+bold = { family = "Iosevka Nerd Font Mono", style = "Bold" }
+italic = { family = "Iosevka Nerd Font Mono", style = "Italic" }
+bold_italic = { family = "Iosevka Nerd Font Mono", style = "Bold Italic" }
 
 # [keyboard]
 # bindings = [

@@ -1,5 +1,15 @@
 # eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+    set fish_greeting
+
+    # set -gx ZELLIJ_AUTO_ATTACH true
+    # set -gx ZELLIJ_AUTO_EXIT true
+    #
+    # eval (zellij setup --generate-auto-start fish | string collect)
+end
+
 function fish_mode_prompt; end
 
 function fish_prompt -d "Write out the prompt"
@@ -9,11 +19,7 @@ function fish_prompt -d "Write out the prompt"
     printf '%s%s%s@%s →  ' (set_color $fish_color_cwd) $USER (set_color normal) $hostname
 end
 
-if status is-interactive
-    # Commands to run in interactive sessions can go here
-    set fish_greeting
 
-end
 
 fish_vi_key_bindings
 
@@ -74,9 +80,21 @@ fish_add_path $HOME/fvm/versions/stable/bin
 fish_add_path $HOME/Android/Sdk/cmdline-tools/latest/bin
 fish_add_path $HOME/Android/Sdk/platform-tools
 
+fish_add_path $HOME/.pub-cache/bin
+
+# Puro
+fish_add_path $HOME/.puro/bin
+fish_add_path $HOME/.puro/shared/pub_cache/bin
+fish_add_path $HOME/.puro/envs/default/flutter/bin
+export PURO_ROOT=$HOME/.puro
+
 zoxide init fish | source
 direnv hook fish | source
 
 # eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)"
 
 fish_add_path /home/hansen/.spicetify
+
+
+# Added by Antigravity CLI installer
+set -gx PATH "/home/hansen/.local/bin" $PATH

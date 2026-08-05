@@ -46,6 +46,13 @@ output "HDMI-A-2" {
     position x=0 y=0
 }
 
+output "HDMI-A-1" {
+    mode "1920x1080@60.00"
+    scale 1
+    transform "normal"
+    position x=0 y=0
+}
+
 // // without external keyboard
 // output "HDMI-A-2" {
 //     mode "1920x1080@60.00"
@@ -224,16 +231,18 @@ window-rule {
 }
 
 binds {
-    Ctrl+E { spawn "wtype" "-k" "Escape"; }
-    Ctrl+B { spawn "wtype" "-k" "g"; }
-    Ctrl+M { spawn "wtype" "-k" "h"; }
-    Ctrl+Shift+M { spawn "wtype" "-k" "H"; }
-    Ctrl+Shift+B { spawn "wtype" "-k" "G"; }
-    Ctrl+Period { spawn "wtype" "-k" "Colon"; }
-    Ctrl+Semicolon { spawn "wtype" "-k" "Apostrophe"; }
-    Ctrl+Shift+Semicolon { spawn "wtype" "-k" "Quotedbl"; }
-    Ctrl+Down { spawn "wtype" "-k" "Up"; }
-    Mod+D { spawn "fuzzel"; }
+     Ctrl+E { spawn "wtype" "-k" "Escape"; }
+     Ctrl+B { spawn "wtype" "-k" "g"; }
+     Ctrl+M { spawn "wtype" "-k" "h"; }
+     Ctrl+Shift+M { spawn "wtype" "-k" "H"; }
+     Ctrl+Shift+B { spawn "wtype" "-k" "G"; }
+     Ctrl+Period { spawn "wtype" "-k" "Colon"; }
+     Ctrl+Semicolon { spawn "wtype" "-k" "Apostrophe"; }
+     Ctrl+Shift+Semicolon { spawn "wtype" "-k" "Quotedbl"; }
+     Ctrl+Down { spawn "wtype" "-k" "Up"; }
+     Mod+Z { spawn "fuzzel"; }
+    
+    Mod+D     { focus-monitor-right; }
 
     // Window keymaps
     Mod+b     { focus-column-left; }
@@ -306,7 +315,7 @@ binds {
     Mod+A     { focus-monitor-left; }
     Mod+S     { focus-monitor-down; }
     Mod+W     { focus-monitor-up; }
-    // Mod+D     { focus-monitor-right; }
+    //Mod+D     { focus-monitor-right; }
 
 
     Mod+Alt+W  { move-window-to-monitor-up; }

@@ -1,4 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR __fish_initialized:4300
-SETUVAR fish_user_paths:/home/eve/Android/Sdk/platform\x2dtools\x1e/home/eve/Android/Sdk/cmdline\x2dtools/latest/bin\x1e/home/eve/\x2elocal/bin\x1e/home/eve/\x2esdkman\x1e/home/eve/go/bin\x1e/home/eve/\x2epnpm\x1e/home/eve/\x2espicetify
+SETUVAR _fisher_jorgebucaran_2F_nvm_2E_fish_files:\x7e/\x2econfig/fish/functions/_nvm_index_update\x2efish\x1e\x7e/\x2econfig/fish/functions/_nvm_list\x2efish\x1e\x7e/\x2econfig/fish/functions/_nvm_version_activate\x2efish\x1e\x7e/\x2econfig/fish/functions/_nvm_version_deactivate\x2efish\x1e\x7e/\x2econfig/fish/functions/nvm\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/nvm\x2efish\x1e\x7e/\x2econfig/fish/completions/nvm\x2efish
+SETUVAR _fisher_plugins:jorgebucaran/nvm\x2efish
+SETUVAR _fisher_upgraded_to_4_4:\x1d
+SETUVAR fish_user_paths:/home/hansen/\x2epub\x2dcache/bin\x1e/home/hansen/\x2epuro/bin\x1e/home/hansen/\x2elocal/bin\x1e/home/hansen/Android/Sdk/platform\x2dtools\x1e/home/hansen/Android/Sdk/cmdline\x2dtools/latest/bin\x1e/home/hansen/go/bin\x1e/home/hansen/\x2espicetify\x1e/home/hansen/\x2epnpm/bin\x1e/home/hansen/\x2epnpm\x1e/home/eve/Android/Sdk/platform\x2dtools\x1e/home/eve/Android/Sdk/cmdline\x2dtools/latest/bin\x1e/home/eve/\x2elocal/bin\x1e/home/eve/\x2esdkman\x1e/home/eve/go/bin\x1e/home/eve/\x2epnpm\x1e/home/eve/\x2espicetify

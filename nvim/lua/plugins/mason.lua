@@ -1,60 +1,46 @@
--- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
--- Customize Mason
-
----@type LazySpec
-return {
-  -- use mason-tool-installer for automatically installing Mason packages
-  {
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
-    -- overrides `require("mason-tool-installer").setup(...)`
-    opts = {
-      -- Make sure to use the names found in `:Mason`
-      ensure_installed = {
-        -- install language servers
-        "lua-language-server",
-        -- "clangd",
-        -- "rust-analyzer",
-        "ty",
-        -- "gopls",
-        "protols",
-
-        -- Web Dev --
-        "vtsls",
-        "svelte-language-server",
-        "tailwindcss-language-server",
-        "emmet-language-server",
-        "css-lsp",
-
-        -- Devops --
-        "dockerfile-language-server",
-        "yaml-language-server",
-        "bash-language-server",
-        "json-lsp",
-        "taplo",
-        -- "cmake-language-server",
-        -- "nginx-language-server",
-        -- "nginx-config-formatter",
-        -- "postgres-language-server",
-        -- "sqls",
-
-        -- install formatters
-        "stylua",
-        "prettier",
-        -- "clang-format",
-        "shfmt",
-        -- "buf",
+require("mason").setup()
+require("mason-lspconfig").setup({
+    ensure_installed = {
+        "lua_ls",
+        "gopls",
+        "clangd",
+        "svelte",
         "ruff",
-        "yamlfmt",
-
-        -- install debuggers
-        "debugpy",
-        "go-debug-adapter",
-        "bash-debug-adapter",
-
-        -- install any other package
-        "tree-sitter-cli",
-      },
+        "ty",
+        "ts_ls",
+        "terraformls",
+        "cssls",
+        "ansiblels",
+        "emmet_language_server",
+        "sqls",
+        "angularls",
+        "dockerls",
+        "docker_compose_language_service",
+        "bashls",
+        "rust_analyzer",
+        "tailwindcss"
+        -- "nginx_language_server"
     },
-  },
-}
+    automatic_enable = {
+        "lua_ls",
+        "gopls",
+        "clangd",
+        "svelte-language-server",
+        "ruff",
+        "ty",
+        "ts_ls",
+        "terraformls",
+        "cssls",
+        "emmet_language_server",
+        "ansiblels",
+        "sqls",
+        "angularls",
+        "dockerls",
+        "docker_compose_language_service",
+        "nginx_language_server",
+        "bashls",
+        "rust_analyzer",
+        "tailwindcss"
+        -- exclude = {},
+    },
+})
