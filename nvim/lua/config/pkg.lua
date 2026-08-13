@@ -30,6 +30,8 @@ vim.pack.add({
 
     --Trouble
     { src = gh("folke/trouble.nvim"),              name = "trouble.nvim" },
+
+    { src = gh("rose-pine/neovim"),                name = "rose-pine" },
 })
 
 local is_first_install = false

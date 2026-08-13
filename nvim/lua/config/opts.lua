@@ -14,9 +14,6 @@ o.scrolloff = 10
 
 o.winborder = "single"
 
-o.wrap = true
-o.linebreak = true
-
 vim.diagnostic.config({
-    virtual_text = true,
+	virtual_lines = false,
 })

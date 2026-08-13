@@ -1,6 +1,6 @@
 [general]
 import = [
-  "~/.config/alacritty/themes/catppuccin-mocha.toml"
+  "~/.config/alacritty/themes/rose-pine.toml"
 ]
 
 [terminal]
