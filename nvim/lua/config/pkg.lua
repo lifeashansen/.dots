@@ -32,9 +32,11 @@ vim.pack.add({
     { src = gh("folke/trouble.nvim"),              name = "trouble.nvim" },
 
     { src = gh("rose-pine/neovim"),                name = "rose-pine" },
+    { src = gh("windwp/nvim-ts-autotag"),          name = "nvim-ts-autotag" },
+    { src = gh("j-hui/fidget.nvim"),               name = "fidget.nvim" },
 })
 
-local is_first_install = false
+local is_first_install = true
 
 -- Only after first installation or updates
 if is_first_install then
