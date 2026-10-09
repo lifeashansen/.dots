@@ -1,4 +1,5 @@
-vim.keymap.set("n", "<Leader>e", "<CMD>Neotree position=float<Cr>")
+-- vim.keymap.set("n", "<Leader>e", "<CMD>Neotree position=float<Cr>")
+vim.keymap.set("n", "<Leader>e", "<CMD>Oil<Cr>", { desc = "Open oil file explorer" })
 vim.keymap.set("n", "<Leader>ff", "<CMD>FzfLua files<Cr>")
 vim.keymap.set("n", "<Leader>fb", "<CMD>FzfLua buffers<Cr>")
 vim.keymap.set("n", "<Leader>d", function()

@@ -10,6 +10,7 @@ vim.pack.add({
     { src = gh("saghen/blink.cmp"),                name = "blink.cmp" },
 
     { src = gh("stevearc/conform.nvim"),           name = "conform" },
+    { src = gh("stevearc/oil.nvim"),               name = "oil.nvim" },
     { src = gh("vyfor/cord.nvim"),                 name = "cord" },
     { src = gh("wakatime/vim-wakatime"),           name = "wakatime" },
     { src = gh("catppuccin/nvim"),                 name = "catppuccin" },

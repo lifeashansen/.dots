@@ -9,6 +9,7 @@ require("plugins.neotree")
 require("plugins.wakatime")
 require("plugins.cord")
 require("plugins.mason")
+require("plugins.oil")
 require("plugins.autotag")
 
 require("fidget").setup({})
