@@ -1,7 +1,7 @@
 font=Iosevka NFM
 indicator-radius=100
 indicator-thickness=5
-scaling=center
+scaling=fill
 ignore-empty-password
 show-failed-attempts
 image=$HOME/.dots/wallpapers/wallpaper.png
