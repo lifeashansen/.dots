@@ -93,13 +93,13 @@ require("catppuccin").setup({
     transparent_background = false,
 })
 
-require("mini.starter").setup()
+-- require("mini.starter").setup()
 require("mini.icons").setup()
-require("mini.files").setup()
+-- require("mini.files").setup()
 require("mini.pairs").setup()
 require("mini.tabline").setup()
-require("mini.statusline").setup()
-require("mini.starter").setup()
+-- require("mini.statusline").setup()
+-- require("mini.starter").setup()
 -- require("mini.completion").setup()
 --
 require("trouble").setup({})
@@ -133,6 +133,8 @@ local treesitter_enabled = {
     "lua",
     "c",
     "cpp",
+    "make",
+    "cmake",
     "go",
     "python",
     "rust",
