@@ -1,8 +1,0 @@
-require("mini.starter").setup()
-require("mini.icons").setup()
-require("mini.files").setup()
-require("mini.pairs").setup()
-require("mini.tabline").setup()
-require("mini.statusline").setup()
-require("mini.starter").setup()
--- require("mini.completion").setup()
