@@ -17,6 +17,7 @@ o.scrolloff = 10
 o.winborder = "single"
 
 vim.diagnostic.config({
+    virtual_text = true,
     virtual_lines = false,
 })
 
@@ -119,8 +120,8 @@ local enabled_lsps = {
     "cssls",
     "ansiblels",
     "sqls",
-    "angularls",
-    "rust_analyzer"
+    "rust_analyzer",
+    "dockerls"
 
 }
 require("mason-lspconfig").setup({
@@ -183,3 +184,12 @@ vim.keymap.set("n", "<Leader>x", "<CMD>bdelete<Cr>")
 
 vim.keymap.set("n", "gD", "<CMD>lua vim.lsp.buf.declaration()<Cr>", { noremap = true, silent = true })
 vim.keymap.set("n", "gd", "<CMD>lua vim.lsp.buf.definition()<Cr>", { noremap = true, silent = true })
+
+vim.keymap.set("n", "<Leader>td", function()
+    local is_virtual_text_enabled = vim.diagnostic.config().virtual_text
+
+    vim.diagnostic.config({
+        virtual_text = ! is_virtual_text_enabled,
+        virtual_lines = is_virtual_text_enabled,
+    })
+end, { desc = "Toggle diagnostics" })
