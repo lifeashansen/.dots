@@ -91,9 +91,10 @@ export PURO_ROOT=$HOME/.puro
 zoxide init fish | source
 direnv hook fish | source
 
-# eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)"
 
-fish_add_path /home/hansen/.spicetify
+fish_add_path $HOME/.spicetify
+fish_add_path $HOME/.local/share/solana/install/active_release/bin
 
 
 # Added by Antigravity CLI installer

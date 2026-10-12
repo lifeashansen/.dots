@@ -109,7 +109,7 @@ layout {
     }
 }
 
-spawn-at-startup "sh" "-c" "swaybg --image ~/.dots/wallpapers/bsod.png --output '*' --mode fill"
+spawn-at-startup "sh" "-c" "swaybg --image ~/.dots/wallpapers/wallpaper.png --output '*' --mode fill"
 spawn-at-startup "wlsunset" "-t" "2500" "-T" "8500" "-S" "07:00" "-s" "19:00" "-g" "0.7"
 spawn-at-startup "waybar"
 // spawn-at-startup "swaync"
@@ -222,6 +222,12 @@ window-rule {
 
 window-rule {
   match app-id="^Alacritty$"
+}
+
+window-rule {
+  match app-id="^SFML$"
+  open-maximized false
+  open-floating true
 }
 
 

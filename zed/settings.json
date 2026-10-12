@@ -114,66 +114,66 @@
         "arguments": ["--stdio"],
       },
     },
-    "tailwindcss-language-server": {
-      "binary": {
-        "path": "/usr/bin/tailwindcss-language-server",
-        "arguments": ["--stdio"],
-      },
-    },
-    "vtsls": {
-      "binary": {
-        "path": "~/.pnpm/bin/vtsls",
-        "arguments": ["--stdio"],
-      },
-    },
-    "eslint": {
-      "binary": {
-        "path": "/usr/bin/eslint-language-server",
-        "arguments": ["--stdio"],
-      },
-    },
-    "emmet-language-server": {
-      "binary": {
-        "path": "~/.pnpm/bin/emmet-language-server",
-        "arguments": ["--stdio"],
-      },
-    },
-    "docker-language-server": {
-      "binary": {
-        "path": "/usr/bin/bash-language-server",
-        "arguments": ["start", "--stdio"],
-      },
-    },
-    "bash-language-server": {
-      "binary": {
-        "path": "/usr/bin/bash-language-server",
-        "arguments": ["--stdio"],
-      },
-    },
-    "yaml-language-server": {
-      "binary": {
-        "path": "~/.pnpm/bin/yaml-language-server",
-        "arguments": ["--stdio"],
-      },
-    },
-    "json-language-server": {
-      "binary": {
-        "path": "~/.pnpm/bin/vscode-json-languageserver",
-        "arguments": ["--stdio"],
-      },
-    },
-    "buf": {
-      "binary": {
-        "path": "/usr/bin/buf",
-        "arguments": ["lsp", "serve"],
-      },
-    },
-    "discord_presence": {
-      "binary": {
-        "path": "/usr/local/bin/discord-presence-lsp",
-        "arguments": ["--stdio"],
-      },
-    },
+    // "tailwindcss-language-server": {
+    //   "binary": {
+    //     "path": "/usr/bin/tailwindcss-language-server",
+    //     "arguments": ["--stdio"],
+    //   },
+    // },
+    // "vtsls": {
+    //   "binary": {
+    //     "path": "~/.pnpm/bin/vtsls",
+    //     "arguments": ["--stdio"],
+    //   },
+    // },
+    // "eslint": {
+    //   "binary": {
+    //     "path": "/usr/bin/eslint-language-server",
+    //     "arguments": ["--stdio"],
+    //   },
+    // },
+    // "emmet-language-server": {
+    //   "binary": {
+    //     "path": "~/.pnpm/bin/emmet-language-server",
+    //     "arguments": ["--stdio"],
+    //   },
+    // },
+    // "docker-language-server": {
+    //   "binary": {
+    //     "path": "/usr/bin/bash-language-server",
+    //     "arguments": ["start", "--stdio"],
+    //   },
+    // },
+    // "bash-language-server": {
+    //   "binary": {
+    //     "path": "/usr/bin/bash-language-server",
+    //     "arguments": ["--stdio"],
+    //   },
+    // },
+    // "yaml-language-server": {
+    //   "binary": {
+    //     "path": "~/.pnpm/bin/yaml-language-server",
+    //     "arguments": ["--stdio"],
+    //   },
+    // },
+    // "json-language-server": {
+    //   "binary": {
+    //     "path": "~/.pnpm/bin/vscode-json-languageserver",
+    //     "arguments": ["--stdio"],
+    //   },
+    // },
+    // "buf": {
+    //   "binary": {
+    //     "path": "/usr/bin/buf",
+    //     "arguments": ["lsp", "serve"],
+    //   },
+    // },
+    // "discord_presence": {
+    //   "binary": {
+    //     "path": "/usr/local/bin/discord-presence-lsp",
+    //     "arguments": ["--stdio"],
+    //   },
+    // },
   },
   "auto_install_extensions": {
     "discord-presence": false,
