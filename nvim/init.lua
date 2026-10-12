@@ -35,6 +35,8 @@ vim.pack.add({
     { src = gh("saghen/blink.lib"),                name = "blink.lib" },
     { src = gh("saghen/blink.cmp"),                name = "blink.cmp" },
 
+    { src = gh("folke/todo-comments.nvim"),        name = "todo-comments.nvim" },
+
     { src = gh("stevearc/conform.nvim"),           name = "conform" },
     { src = gh("stevearc/oil.nvim"),               name = "oil.nvim" },
     { src = gh("vyfor/cord.nvim"),                 name = "cord" },
@@ -48,7 +50,7 @@ vim.pack.add({
     { src = gh("neovim/nvim-lspconfig"),           name = "nvim-lspconfig" },
 
     --Trouble
-    { src = gh("folke/trouble.nvim"),              name = "trouble.nvim" },
+    -- { src = gh("folke/trouble.nvim"),              name = "trouble.nvim" },
 
     { src = gh("windwp/nvim-ts-autotag"),          name = "nvim-ts-autotag" },
     { src = gh("j-hui/fidget.nvim"),               name = "fidget.nvim" },
@@ -103,7 +105,7 @@ require("mini.tabline").setup()
 -- require("mini.starter").setup()
 -- require("mini.completion").setup()
 --
-require("trouble").setup({})
+-- require("trouble").setup({})
 require("wakatime").setup()
 
 require("mason").setup()
@@ -167,8 +169,10 @@ for _, lang in pairs(treesitter_enabled) do
         end,
     })
 end
+require("todo-comments").setup()
 
 vim.cmd.colorscheme("catppuccin-mocha")
+
 -- KEYMAPS --
 
 -- vim.keymap.set("n", "<Leader>e", "<CMD>Neotree position=float<Cr>")
