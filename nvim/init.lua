@@ -185,6 +185,9 @@ end)
 vim.keymap.set("n", "<Leader>dx", "<CMD>cclose<Cr>")
 
 vim.keymap.set("n", "<Leader>x", "<CMD>bdelete<Cr>")
+-- Yank to system clipboard
+vim.keymap.set("v", "Y", '"+y')
+
 
 vim.keymap.set("n", "gD", "<CMD>lua vim.lsp.buf.declaration()<Cr>", { noremap = true, silent = true })
 vim.keymap.set("n", "gd", "<CMD>lua vim.lsp.buf.definition()<Cr>", { noremap = true, silent = true })
