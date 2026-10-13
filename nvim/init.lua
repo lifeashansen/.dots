@@ -39,7 +39,6 @@ vim.pack.add({
 
     { src = gh("stevearc/conform.nvim"),           name = "conform" },
     { src = gh("stevearc/oil.nvim"),               name = "oil.nvim" },
-    { src = gh("vyfor/cord.nvim"),                 name = "cord" },
     { src = gh("wakatime/vim-wakatime"),           name = "wakatime" },
     { src = gh("catppuccin/nvim"),                 name = "catppuccin" },
     { src = gh("ibhagwan/fzf-lua"),                name = "fzf-lua" },
@@ -56,16 +55,20 @@ vim.pack.add({
     { src = gh("j-hui/fidget.nvim"),               name = "fidget.nvim" },
 })
 
-local is_first_install = true
+local is_first_install = false
 
 -- Only after first installation or updates
 if is_first_install then
-    local cmp = require("blink.cmp")
-    cmp.build():pwait()
-    cmp.setup()
+    local blink_cmp = require("blink.cmp")
+    blink_cmp.build():pwait()
 end
 
 -- ACTIVATE PLUGINS --
+require("blink.cmp").setup({
+    keymap = {
+        preset = "enter"
+    }
+})
 require("nvim-ts-autotag").setup()
 require("blink.cmp").setup()
 require("fidget").setup()
@@ -87,7 +90,6 @@ require("conform").setup({
         lsp_format = "fallback",
     },
 })
-require("cord").setup()
 require("oil").setup({
     delete_to_trash = true
 })
