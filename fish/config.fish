@@ -42,7 +42,8 @@ alias "mkdir"="mkdir -p"
 alias "tk"="tmux kill-server"
 alias "zk"="zellij kill-all-sessions"
 
-alias "gs"="git status --short"
+alias "gs"="git status"
+alias "gss"="git status --short"
 alias "gd"="git diff"
 alias "gc"="git commit"
 alias "ga"="git add"
@@ -59,6 +60,8 @@ alias "cbr"="cargo build --release"
 alias "mk"="make"
 alias "mr"="make run"
 alias "mb"="make build"
+
+alias "k"="kubectl"
 
 export MANPAGER="nvim +Man!"
 export EDITOR="nvim"
@@ -99,3 +102,5 @@ fish_add_path $HOME/.local/share/solana/install/active_release/bin
 
 # Added by Antigravity CLI installer
 set -gx PATH "/home/hansen/.local/bin" $PATH
+
+fish_add_path /home/hansen/.spicetify
