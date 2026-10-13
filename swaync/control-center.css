@@ -29,284 +29,288 @@
 @define-color crust #11111b;
 
 * {
-  color: @text;
-  all: unset;
-  font-size: 16px;
-  font-family: "SpaceMono Nerd Font";
-  font-weight: normal;
-  transition: 200ms;
+    color: @text;
+    all: unset;
+    font-size: 14px;
+    /* font-family: "SpaceMono Nerd Font"; */
+    font-family: "Iosevka NFM";
+    font-weight: normal;
+    transition: 200ms;
 }
 
 .control-center {
-  background: @mantle;
-  border-radius: 3px;
-  padding: 9px;
-  margin: 0px;
-  border: 1px solid #585b70;
+    background: @mantle;
+    border-radius: 3px;
+    padding: 9px;
+    margin: 0px;
+    border: 1px solid #585b70;
 }
 
 /* buttons grid */
 
 .widget-buttons-grid {
-  margin: 0px;
-  background: transparent;
-  color: @text;
+    margin: 0px;
+    background: transparent;
+    color: @text;
 }
 
-.widget-buttons-grid > flowbox > flowboxchild > button {
-  margin: 3px;
-  padding: 6px 12px;
-  background: @base;
-  color: @text;
-  border-radius: 3px;
-  border: 1px solid #45475a;
+.widget-buttons-grid>flowbox>flowboxchild>button {
+    margin: 3px;
+    padding: 6px 12px;
+    background: @base;
+    color: @text;
+    border-radius: 3px;
+    border: 1px solid #45475a;
 }
 
-.widget-buttons-grid > flowbox > flowboxchild > button:hover {
-  background: @surface0;
+.widget-buttons-grid>flowbox>flowboxchild>button:hover {
+    background: @surface0;
 }
 
-.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
-  background: @main_accent;
-  border: 1px solid #313244;
+.widget-buttons-grid>flowbox>flowboxchild>button.toggle:checked {
+    background: @main_accent;
+    border: 1px solid #313244;
 }
 
-.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked label {
-  color: @crust;
+.widget-buttons-grid>flowbox>flowboxchild>button.toggle:checked label {
+    color: @crust;
 }
 
 /* notifications */
 
 .notification-row .notification-background {
-  background: @base;
-  padding: 0px;
-  border-radius: 2px;
-  margin: 5px 5px 5px 5px;
-  border: 1px solid #313244;
+    background: @base;
+    padding: 0px;
+    border-radius: 2px;
+    margin: 5px 5px 5px 5px;
+    border: 1px solid #313244;
 }
 
 .summary {
-  font-size: 15px;
-  background: transparent;
-  color: @text;
-  margin-left: 0px;
+    font-size: 15px;
+    background: transparent;
+    color: @text;
+    margin-left: 0px;
 }
 
 .time {
-  font-size: 11px;
-  font-style: italic;
-  background: transparent;
-  color: @subtext0;
-  text-shadow: none;
-  margin: 3px 10px 0px 0px;
+    font-size: 11px;
+    font-style: italic;
+    background: transparent;
+    color: @subtext0;
+    text-shadow: none;
+    margin: 3px 10px 0px 0px;
 }
 
 .image {
-  background: transparent;
-  border-radius: 99px;
-  margin: 0px 10px 3px 2px;
+    background: transparent;
+    border-radius: 99px;
+    margin: 0px 10px 3px 2px;
 }
 
 .body {
-  font-size: 13px;
-  font-weight: normal;
-  background: transparent;
-  color: @text;
-  text-shadow: none;
-  margin-left: 0px;
+    font-size: 13px;
+    font-weight: normal;
+    background: transparent;
+    color: @text;
+    text-shadow: none;
+    margin-left: 0px;
 }
 
 .notification-group-headers {
-  font-weight: bold;
-  font-size: 11pt;
-  color: @mauve;
+    font-weight: bold;
+    font-size: 11pt;
+    color: @mauve;
 }
 
 .notification-group-icon {
-  color: @green;
-  margin-right: 8px;
+    color: @green;
+    margin-right: 8px;
 }
 
 .notification-group-collapse-button {
-  background: @maroon;
-  color: @base;
-  border: none;
-  min-width: 24px;
-  min-height: 24px;
+    background: @maroon;
+    color: @base;
+    border: none;
+    min-width: 24px;
+    min-height: 24px;
 }
 
 .notification-group-collapse-button:hover {
-  background: @red;
-  color: @crust;
+    background: @red;
+    color: @crust;
 }
 
 .notification-group-close-all-button {
-  background: @maroon;
-  color: @base;
-  border: none;
-  min-width: 24px;
-  min-height: 24px;
+    background: @maroon;
+    color: @base;
+    border: none;
+    min-width: 24px;
+    min-height: 24px;
 }
 
 .notification-group-close-all-button:hover {
-  background: @red;
-  color: @crust;
+    background: @red;
+    color: @crust;
 }
 
 .notification-default-action,
 .notification-action {
-  padding: 4px;
-  margin: 0;
-  box-shadow: none;
-  background: transparent;
-  border: none;
-  color: @text;
-  transition: all 0.15s ease-in-out;
-  font-size: 11pt;
+    padding: 4px;
+    margin: 0;
+    box-shadow: none;
+    background: transparent;
+    border: none;
+    color: @text;
+    transition: all 0.15s ease-in-out;
+    font-size: 11pt;
 }
 
 .notification-default-action:hover,
 .notification-action:hover {
-  -gtk-icon-effect: none;
-  background: @mantle;
+    -gtk-icon-effect: none;
+    background: @mantle;
 }
 
 .notification-default-action {
-  border-radius: 8px;
+    border-radius: 8px;
 }
 
 .notification-default-action:not(:only-child) {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .notification-action {
-  border-radius: 0;
-  border-top: none;
-  border-right: none;
+    border-radius: 0;
+    border-top: none;
+    border-right: none;
 }
 
 .notification-action:first-child {
-  border-bottom-left-radius: 10px;
-  background: @mantle;
+    border-bottom-left-radius: 10px;
+    background: @mantle;
 }
 
 .notification-action:last-child {
-  border-bottom-right-radius: 10px;
-  background: @mantle;
+    border-bottom-right-radius: 10px;
+    background: @mantle;
 }
 
 .inline-reply {
-  margin-top: 4px;
+    margin-top: 4px;
 }
 
 .inline-reply-entry {
-  background: @crust;
-  color: @text;
-  caret-color: @mauve;
-  border: 1px solid @surface0;
-  border-radius: 10px;
+    background: @crust;
+    color: @text;
+    caret-color: @mauve;
+    border: 1px solid @surface0;
+    border-radius: 10px;
 }
 
 .inline-reply-button {
-  margin-left: 4px;
-  background: @crust;
-  border: 1px solid @surface0;
-  border-radius: 10px;
-  color: @text;
+    margin-left: 4px;
+    background: @crust;
+    border: 1px solid @surface0;
+    border-radius: 10px;
+    color: @text;
 }
 
 .inline-reply-button:disabled {
-  background: initial;
-  color: @overlay1;
-  border: 1px solid transparent;
+    background: initial;
+    color: @overlay1;
+    border: 1px solid transparent;
 }
 
 .inline-reply-button:hover {
-  background: @surface1;
+    background: @surface1;
 }
 
 /* Music player */
 .widget-mpris {
-  /* background: alpha(@selected, 0.2); */
-  border-radius: 3px;
-  color: @text;
-  padding: 6px;
-  margin: 20px 6px;
+    /* background: alpha(@selected, 0.2); */
+    border-radius: 3px;
+    color: @text;
+    padding: 6px;
+    margin: 20px 6px;
 }
 
 .widget-mpris button {
-  color: alpha(@flamingo, 0.9);
-  border-radius: 4px;
+    color: alpha(@flamingo, 0.9);
+    border-radius: 4px;
 }
 
 .widget-mpris button:hover {
-  color: @text;
+    color: @text;
 }
 
 .widget-mpris-player {
-  padding: 2px;
-  margin: 2px 4px 4px 2px;
-  border-radius: 3px;
+    padding: 2px;
+    margin: 2px 4px 4px 2px;
+    border-radius: 3px;
 }
 
 .widget-mpris-album-art {
-  border-radius: 3px;
+    border-radius: 3px;
 }
 
 .widget-mpris-title {
-  font-weight: 700;
-  font-size: 15px;
+    font-weight: 700;
+    font-size: 15px;
 }
 
 .widget-mpris-subtitle {
-  font-weight: 500;
-  font-size: 13px;
+    font-weight: 500;
+    font-size: 13px;
 }
 
 progressbar,
 progress,
 trough {
-  border-radius: 3px;
-  min-height: 20px;
-  background: @surface2;
+    border-radius: 3px;
+    min-height: 20px;
+    background: @surface2;
 }
 
 trough highlight {
-  padding: 4px;
-  background: @main_accent;
-  border-radius: 3px;
+    padding: 4px;
+    background: @main_accent;
+    border-radius: 3px;
 }
+
 trough slider {
-  background: transparent;
+    background: transparent;
 }
+
 trough slider:hover {
-  background: transparent;
+    background: transparent;
 }
 
 .widget-volume {
-  background: @base;
-  padding: 2px 4px 2px 4px;
-  margin: 4px 4px 1px 4px;
-  border-radius: 2px;
-  color: @subtext0;
-  border: 1px solid #45475a;
+    background: @base;
+    padding: 2px 4px 2px 4px;
+    margin: 4px 4px 1px 4px;
+    border-radius: 2px;
+    color: @subtext0;
+    border: 1px solid #45475a;
 }
 
-.widget-volume > box > button {
-  background: transparent;
-  border: none;
+.widget-volume>box>button {
+    background: transparent;
+    border: none;
 }
 
 .widget-backlight {
-  background: @base;
-  color: @subtext0;
-  padding: 2px 4px 2px 4px;
-  margin: 1px 4px 4px 4px;
-  border-radius: 2px;
-  border: 1px solid #45475a;
+    background: @base;
+    color: @subtext0;
+    padding: 2px 4px 2px 4px;
+    margin: 1px 4px 4px 4px;
+    border-radius: 2px;
+    border: 1px solid #45475a;
 }
-.widget-backlight > box > button {
-  background: transparent;
-  border: none;
+
+.widget-backlight>box>button {
+    background: transparent;
+    border: none;
 }
