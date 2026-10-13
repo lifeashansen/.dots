@@ -34,21 +34,21 @@
       "actions": [
         {
           "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && nmcli radio wifi on || nmcli radio wifi off'",
-          "label": "󰤨 WiFi",
+          "label": "WiFi",
           "position": "left",
           "type": "toggle",
           "update-command": "sh -c '[[ $(nmcli radio wifi) == \"enabled\" ]] && echo true || echo false'"
         },
         {
           "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE = true }] && bluetoothctl power on || bluetoothctl power off'",
-          "label": "󰂯 Bluetooth",
+          "label": "Bluetooth",
           "position": "right",
           "type": "toggle",
           "update-command": "sh -c 'bluetoothctl show | grep -q '\\''Powered: yes'\\'' && echo true || echo false'"
         },
         {
           "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && warp-cli connect || warp-cli disconnect'",
-          "label": " CloudFlare",
+          "label": "CloudFlare",
           "position": "left",
           "type": "toggle",
           "update-command": "sh -c 'warp-cli status | grep -q '\\''Status update: Connected'\\'' && echo true || echo false'"
@@ -56,14 +56,14 @@
         {
           "active": false,
           "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && ~/.config/swaync/scripts/connection.sh || pkill -f connection.sh'",
-          "label": "󰒑 Ping",
+          "label": "Ping",
           "position": "right",
           "type": "toggle",
           "update-command": "sh -c '[ -f /tmp/connection.lock ] && echo true || echo false'"
         },
         {
           "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && wlsunset -t 3500 -T 6500 -S 07:00 -s 19:00 -g 0.7 || pkill -f wlsunset'",
-          "label": " Night",
+          "label": "Night",
           "position": "left",
           "type": "toggle",
           "update-command": "sh -c 'pgrep -x wlsunset > /dev/null && echo true || echo false'"
@@ -71,29 +71,29 @@
         {
           "active": false,
           "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && swaync-client --dnd-on || swaync-client --dnd-off'",
-          "label": " DnD",
+          "label": "DnD",
           "position": "right",
           "type": "toggle",
           "update-command": "sh -c '[[ $(swaync-client --get-dnd) == \"true\" ]] && echo true || echo false'"
         },
         {
           "command": "sh -c 'niri msg action screenshot'",
-          "label": "󱣵 Snip",
+          "label": "Snip",
           "position": "left"
         },
         {
           "command": "~/.config/swaync/scripts/qr.sh",
-          "label": "󰐳  QR",
+          "label": "QR",
           "position": "right"
         },
         {
           "command": "~/.config/swaync/scripts/hyprpicker.sh",
-          "label": "󱨍 Picker",
+          "label": "Picker",
           "position": "left"
         },
         {
           "command": "sh -c 'swaync-client --close-all'",
-          "label": "󰃢 Clear",
+          "label": "Clear",
           "position": "right"
         }
       ]
@@ -104,10 +104,10 @@
     },
     "backlight": {
       "device": "intel_backlight",
-      "label": "󰃞 "
+      "label": "b "
     },
     "volume": {
-      "label": " ",
+      "label": "v ",
       "show-per-app": false
     }
   },
