@@ -125,7 +125,8 @@ local enabled_lsps = {
     "ansiblels",
     "sqls",
     "rust_analyzer",
-    "dockerls"
+    "dockerls",
+    "neocmake",
 
 }
 require("mason-lspconfig").setup({
