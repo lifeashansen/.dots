@@ -112,6 +112,7 @@ local enabled_lsps = {
 	"dockerls",
 	"neocmake",
 	"asm_lsp",
+	"bashls",
 	-- "svelte",
 	-- "ts_ls",
 	-- "cssls",
@@ -143,6 +144,7 @@ local treesitter_enabled = {
 	"terraform",
 	"nasm",
 	"asm",
+	"gotmpl",
 }
 require("nvim-treesitter").setup({
 	auto_install = true,
