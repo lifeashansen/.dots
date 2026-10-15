@@ -193,6 +193,10 @@ vim.keymap.set("n", "<Leader>td", function()
 	})
 end, { desc = "Toggle diagnostics" })
 
+vim.keymap.set("n", "<Leader>tf", function()
+	vim.diagnostic.open_float()
+end)
+
 vim.lsp.config("lua_ls", {
 	settings = {
 		Lua = {
