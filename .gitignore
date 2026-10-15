@@ -1,1 +1,7 @@
-/tmux/plugins/
+tmux/plugins/
+fish/functions/*
+!fish/functions/dsh.fish
+
+
+
+
