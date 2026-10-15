@@ -113,6 +113,7 @@ local enabled_lsps = {
 	"neocmake",
 	"asm_lsp",
 	"bashls",
+	"fish_lsp",
 	-- "svelte",
 	-- "ts_ls",
 	-- "cssls",
@@ -145,6 +146,7 @@ local treesitter_enabled = {
 	"nasm",
 	"asm",
 	"gotmpl",
+	"fish",
 }
 require("nvim-treesitter").setup({
 	auto_install = true,
@@ -193,10 +195,6 @@ vim.keymap.set("n", "<Leader>td", function()
 	})
 end, { desc = "Toggle diagnostics" })
 
-vim.keymap.set("n", "<Leader>tf", function()
-	vim.diagnostic.open_float()
-end)
-
 vim.lsp.config("lua_ls", {
 	settings = {
 		Lua = {
@@ -208,3 +206,5 @@ vim.lsp.config("lua_ls", {
 		},
 	},
 })
+
+vim.diagnostic.config()
