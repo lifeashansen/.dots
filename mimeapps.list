@@ -1,5 +1,0 @@
-
-[Default Applications]
-x-scheme-handler/discord=vesktop.desktop
-x-scheme-handler/hayase=hayase.desktop
-x-scheme-handler/figma=figma-linux.desktop
