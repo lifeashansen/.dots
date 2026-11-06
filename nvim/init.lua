@@ -26,21 +26,21 @@ end
 
 local packages = {
     ["nvim-treesitter/nvim-treesitter"] = "nvim-treesitter",
-    ["nvim-mini/mini.nvim"] = "mini.nvim",
-    ["saghen/blink.lib"] = "blink.lib",
-    ["saghen/blink.cmp"] = "blink.cmp",
-    ["folke/todo-comments.nvim"] = "todo-comments.nvim",
-    ["stevearc/conform.nvim"] = "conform",
-    ["stevearc/oil.nvim"] = "oil.nvim",
-    ["wakatime/vim-wakatime"] = "wakatime",
-    ["catppuccin/nvim"] = "catppuccin",
-    ["ibhagwan/fzf-lua"] = "fzf-lua",
-    ["mason-org/mason.nvim"] = "mason.nvim",
-    ["mason-org/mason-lspconfig.nvim"] = "mason.lspconfig",
-    ["neovim/nvim-lspconfig"] = "nvim-lspconfig",
-    ["j-hui/fidget.nvim"] = "fidget.nvim",
+    ["nvim-mini/mini.nvim"]             = "mini.nvim",
+    ["saghen/blink.lib"]                = "blink.lib",
+    ["saghen/blink.cmp"]                = "blink.cmp",
+    ["folke/todo-comments.nvim"]        = "todo-comments.nvim",
+    ["stevearc/conform.nvim"]           = "conform",
+    ["stevearc/oil.nvim"]               = "oil.nvim",
+    ["wakatime/vim-wakatime"]           = "wakatime",
+    ["catppuccin/nvim"]                 = "catppuccin",
+    ["ibhagwan/fzf-lua"]                = "fzf-lua",
+    ["mason-org/mason.nvim"]            = "mason.nvim",
+    ["mason-org/mason-lspconfig.nvim"]  = "mason.lspconfig",
+    ["neovim/nvim-lspconfig"]           = "nvim-lspconfig",
+    ["j-hui/fidget.nvim"]               = "fidget.nvim",
     -- ["folke/trouble.nvim"]              = "trouble.nvim",
-    -- ["windwp/nvim-ts-autotag"]          = "nvim-ts-autotag",
+    ["windwp/nvim-ts-autotag"]          = "nvim-ts-autotag",
 }
 
 for src, name in pairs(packages) do
@@ -68,6 +68,7 @@ require("blink.cmp").setup()
 require("fidget").setup()
 require("conform").setup({
     formatters_by_ft = {
+        bash = { "shfmt" },
         lua = { "stylua" },
         c = { "clang-format" },
         cpp = { "clang-format" },
@@ -116,10 +117,12 @@ local enabled_lsps = {
     "fish_lsp",
     "gh_actions_ls",
     "yamlls",
+    "vtsls",
+    "cssls",
+    "tailwindcss",
     -- "nil_ls",
     -- "svelte",
     -- "ts_ls",
-    -- "cssls",
 }
 require("mason-lspconfig").setup({
     ensure_installed = enabled_lsps,
@@ -139,6 +142,8 @@ local treesitter_enabled = {
     "svelte",
     "typescript",
     "javascript",
+    "jsx",
+    "tsx",
     "css",
     "bash",
     "json",
@@ -151,7 +156,7 @@ local treesitter_enabled = {
     "gotmpl",
     "fish",
     "nix",
-    "nginx"
+    "nginx",
 }
 require("nvim-treesitter").setup({
     auto_install = true,
@@ -170,6 +175,25 @@ for _, lang in pairs(treesitter_enabled) do
     })
 end
 require("todo-comments").setup()
+
+require("nvim-ts-autotag").setup(
+    {
+        opts = {
+            -- Defaults
+            enable_close = true,          -- Auto close tags
+            enable_rename = true,         -- Auto rename pairs of tags
+            enable_close_on_slash = false -- Auto close on trailing </
+        },
+        -- Also override individual filetype configs, these take priority.
+        -- Empty by default, useful if one of the "opts" global settings
+        -- doesn't work well in a specific filetype
+        per_filetype = {
+            ["html"] = {
+                enable_close = false
+            }
+        }
+    }
+)
 
 vim.cmd.colorscheme("catppuccin-mocha")
 
