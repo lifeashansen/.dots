@@ -1,4 +1,4 @@
-PROMPT="%F{245}ec%f%F{red}%?%f %F{green}%n%f%F{yellow}@%f%F{red}%m%f →  "
+PROMPT="%F{245}x%f%F{red}%?%f %F{green}%n%f%F{yellow}@%f%F{red}%m%f →  "
 
 ZSH_PLUGINS_DIR=$HOME/.zshplugins
 
@@ -17,6 +17,7 @@ source ${ZSH_PLUGINS_DIR}/fzf-tab/fzf-tab.plugin.zsh
 PROMPT_EOL_MARK=$'\u23ce'
 
 alias src="source $HOME/.zshrc"
+alias srctx="tmux source-file $HOME/.config/tmux/tmux.conf"
 alias ls='ls --color=auto'
 alias sl='ls --color=auto'
 alias l='ls --color=auto'
@@ -46,6 +47,7 @@ alias cbr='cargo build --release'
 alias cbrl='cargo build --release --locked'
 
 alias "mr"="make run"
+alias "mk"="make"
 alias "mb"="make build"
 alias "mbr"="make build-release"
 
@@ -83,6 +85,8 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.bun/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.sdkman:$PATH"
+export PATH="$HOME/Android/Sdk/cmdline-tools/latest/bin:$PATH"
+export PATH="$HOME/Android/Sdk/platform-tools:$PATH"
 
 # --- KEYBINDS ---
 bindkey '^p' history-search-backward
@@ -92,5 +96,16 @@ eval "$(zoxide init --cmd cd zsh)"
 eval "$(direnv hook zsh)"
 eval "$(fzf --zsh)"
 
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
 
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
+
+export PATH="$PATH:$HOME/.puro/bin" # Added by Puro
+export PATH="$PATH:$HOME/.puro/shared/pub_cache/bin" # Added by Puro
+export PATH="$PATH:$HOME/.puro/envs/default/flutter/bin" # Added by Puro
+export PURO_ROOT="/home/hansen/.puro" # Added by Puro
