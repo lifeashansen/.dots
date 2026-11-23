@@ -200,11 +200,11 @@ window-rule {
 
 window-rule {
   match app-id="^org.gnome.Calculator$"
-  open-floating true
+  open-floating false
   min-width 400
   max-width 400
-  min-height 300
-  max-height 300
+  // min-height 300
+  // max-height 300
 }
 
 
@@ -239,6 +239,7 @@ window-rule {
 
 binds {
      Ctrl+E { spawn "wtype" "-k" "Escape"; }
+     Ctrl+T { spawn "wtype" "-k" "Return"; }
      Ctrl+B { spawn "wtype" "-k" "g"; }
      Ctrl+M { spawn "wtype" "-k" "h"; }
      Ctrl+Shift+M { spawn "wtype" "-k" "H"; }
@@ -248,6 +249,7 @@ binds {
      Ctrl+Shift+Semicolon { spawn "wtype" "-k" "Quotedbl"; }
      Ctrl+Down { spawn "wtype" "-k" "Up"; }
      Mod+Z { spawn "fuzzel"; }
+     Ctrl+F { spawn "fuzzel"; }
     
     Mod+D     { focus-monitor-right; }
 
@@ -288,8 +290,11 @@ binds {
     XF86AudioPrev allow-when-locked=true { spawn "playerctl" "previous"; }
     XF86AudioNext allow-when-locked=true { spawn "playerctl" "next"; }
 
-    XF86MonBrightnessUp allow-when-locked=true { spawn "~/.config/niri/scripts/brightness.sh" "+"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "~/.config/niri/scripts/brightness.sh" "-"; }
+    Alt+XF86MonBrightnessUp allow-when-locked=true { spawn "ddcutil" "setvcp" "10" "+" "5"; }
+    Alt+XF86MonBrightnessDown allow-when-locked=true { spawn "ddcutil" "setvcp" "10" "-" "5"; }
+
+    XF86MonBrightnessUp allow-when-locked=true { spawn "swayosd-client" "--monitor" "eDP-1" "--brightness" "raise"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "swayosd-client" "--monitor" "eDP-1" "--brightness" "lower"; }
 
     XF86Search { spawn "blueberry"; }
 

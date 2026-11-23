@@ -5,7 +5,7 @@
     },
   },
   "project_panel": {
-    "dock": "left",
+    "dock": "right",
     "default_width": 300,
   },
   "agent": {
@@ -108,12 +108,12 @@
         "arguments": [],
       },
     },
-    "svelte-language-server": {
-      "binary": {
-        "path": "/usr/bin/svelteserver",
-        "arguments": ["--stdio"],
-      },
-    },
+    // "svelte-language-server": {
+    //   "binary": {
+    //     "path": "/usr/bin/svelteserver",
+    //     "arguments": ["--stdio"],
+    //   },
+    // },
     // "tailwindcss-language-server": {
     //   "binary": {
     //     "path": "/usr/bin/tailwindcss-language-server",
@@ -177,16 +177,18 @@
   },
   "auto_install_extensions": {
     "discord-presence": false,
-    "wakatime": false,
+    "wakatime": true,
     "catppuccin": true,
     "catppuccin-icons": true,
     "dockerfile": true,
     "html": true,
     "emmet": true,
     "make": true,
-    "svelte": false,
+    "svelte": true,
     "yaml": true,
     "buf": true,
+    "sql": true,
+    "toml": true,
   },
   "terminal": {
     "alternate_scroll": "off",

@@ -2,12 +2,13 @@
 
 username="hansen"
 
-declare -a CORE_PACKAGES=(
+declare -a core_packages=(
     "xdg-desktop-portal"
     "xdg-desktop-portal-gnome"
-    "niri"
     "polkit"
     "polkit-gnome"
+    "gnome-keyring"
+    "niri"
     "swayosd"
     "swaync"
     "papirus-icon-theme"
@@ -16,7 +17,6 @@ declare -a CORE_PACKAGES=(
     "neovim"
     "tree-sitter-cli"
     "alacritty"
-    "gnome-keyring"
     "bat"
     "tmux"
     "zsh"
@@ -58,7 +58,10 @@ declare -a CORE_PACKAGES=(
     "xwayland-satellite"
 )
 
-declare -a USER_PACKAGES=(
+declare -a user_packages=(
+    "android-tools"
+    "ddcutil"
+    "lorem"
     "evince"
     "filelight"
     "guvcview"
@@ -68,10 +71,8 @@ declare -a USER_PACKAGES=(
     "gucview"
     "obs-studio"
     "mpv"
-    "vlc"
+    "mpv-mpris"
     "yt-dlp"
-    "zeal"
-    "zed"
     "wireshark-qt"
     "typescript"
     "tldr"
@@ -84,7 +85,6 @@ declare -a USER_PACKAGES=(
     "postgresql"
     "pnpm"
     "npm"
-    "mpv-mpris"
     "lazygit"
     "gimp"
     "freedownloadmanager"
@@ -100,6 +100,7 @@ declare -a USER_PACKAGES=(
     "gopls"
     "rustup"
     "aws-cli-v2"
+    "azure-cli"
     "cloudflare-warp-bin"
     "cmake"
     "make"
@@ -109,7 +110,7 @@ declare -a USER_PACKAGES=(
     "shfmt"
 )
 
-declare -a USER_PACKAGES_AUR=(
+declare -a user_packages_aur=(
     "ttf-ms-fonts"
     "spotify"
     "hoppscotch-bin"
@@ -118,39 +119,47 @@ declare -a USER_PACKAGES_AUR=(
     "onlyoffice-bin"
 )
 
-declare -a GROUPS=("docker" "wireshark" "libvirt" "kvm")
+declare -a groups=("docker" "wireshark" "libvirt" "kvm")
 
-declare -a USER_SERVICES=("warp-taskbar")
-declare -a SYSTEM_SERVICES=("ly@tty1" "docker" "warp-svc")
+declare -a user_services=("warp-taskbar")
+declare -a system_services=("ly@tty1" "docker" "warp-svc")
 
 function install_core_packages() {
-    sudo pacman -S --needed --noconfirm "${CORE_PACKAGES[@]}"
+    sudo pacman -S --needed --noconfirm "${core_packages[@]}"
 }
 
 function install_user_packages() {
-    sudo pacman -S --needed --noconfirm "${USER_PACKAGES[@]}"
+    sudo pacman -S --needed --noconfirm "${user_packages[@]}"
 }
 
 function install_aur_packages() {
-    paru -S --needed "${USER_PACKAGES_AUR[@]}"
+    paru -S --needed --skipreview "${user_packages_aur[@]}"
 }
 
 function add_groups() {
-    for group in "${GROUPS[@]}"; do
-        sudo -aG "$username" "$group"
+    for group in "${groups[@]}"; do
+        sudo usermod -aG "$username" "$group"
     done
 }
 
 function enable_user_services() {
-    for user_service in "${USER_SERVICES[@]}"; do
+    for user_service in "${user_services[@]}"; do
         systemctl --user enable --now "$user_service"
     done
 }
 
 function enable_system_services() {
-    for system_service in "${SYSTEM_SERVICES[@]}"; do
+    for system_service in "${system_services[@]}"; do
         sudo systemctl enable --now "$system_service"
     done
+}
+
+function additional_setup() {
+    powerprofilesctl set performance
+}
+
+function sync_dotfiles() {
+    #TODO: Stow dotfiles
 
 }
 
@@ -160,9 +169,18 @@ function apply_theme() {
     gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 }
 
+
+function install_homebrew() {
+    #TODO: Install homebrew
+
+}
+
 install_core_packages()
 install_user_packages()
 install_aur_packages()
 enable_system_services()
 enable_user_services()
+additional_setup()
+sync_dotfiles()
 apply_theme()
+install_homebrew()
