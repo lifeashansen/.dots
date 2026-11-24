@@ -49,7 +49,7 @@ for src, name in pairs(packages) do
     })
 end
 
-local is_first_install = true
+local is_first_install = false
 
 -- Only after first installation or updates
 if is_first_install then
@@ -112,7 +112,7 @@ local enabled_lsps = {
     "rust_analyzer",
     "dockerls",
     "neocmake",
-    "asm_lsp",
+    -- "asm_lsp",
     "bashls",
     "fish_lsp",
     "gh_actions_ls",
@@ -158,6 +158,7 @@ local treesitter_enabled = {
     "nix",
     "nginx",
 }
+
 require("nvim-treesitter").setup({
     auto_install = true,
     ensure_installed = treesitter_enabled,
@@ -165,6 +166,17 @@ require("nvim-treesitter").setup({
         enable = true,
     },
 })
+
+-- FIX: Auto install doesnt work (https://github.com/nvim-treesitter/nvim-treesitter/issues/5888)
+if is_first_install then
+    vim.api.nvim_create_autocmd("VimEnter", {
+        callback = function()
+            vim.cmd("TSInstall " .. table.concat(treesitter_enabled, " "))
+        end
+
+    })
+end
+
 
 for _, lang in pairs(treesitter_enabled) do
     vim.api.nvim_create_autocmd("FileType", {
