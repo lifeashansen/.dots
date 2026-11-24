@@ -113,9 +113,8 @@ declare -a user_packages=(
 declare -a user_packages_aur=(
     "ttf-ms-fonts"
     "spotify"
-    "hoppscotch-bin"
+    "insomnia-bin"
     "visual-studio-code-bin"
-    "postman-bin"
     "onlyoffice-bin"
 )
 
@@ -126,61 +125,69 @@ declare -a system_services=("ly@tty1" "docker" "warp-svc")
 
 function install_core_packages() {
     sudo pacman -S --needed --noconfirm "${core_packages[@]}"
+    echo "Installing core packages"
 }
 
 function install_user_packages() {
+    echo "Installing user packages"
     sudo pacman -S --needed --noconfirm "${user_packages[@]}"
 }
 
 function install_aur_packages() {
+    echo "Installing aur packages"
     paru -S --needed --skipreview "${user_packages_aur[@]}"
 }
 
 function add_groups() {
+    echo "Adding user to groups"
     for group in "${groups[@]}"; do
         sudo usermod -aG "$username" "$group"
     done
 }
 
 function enable_user_services() {
+    echo "Enabling user services"
     for user_service in "${user_services[@]}"; do
         systemctl --user enable --now "$user_service"
     done
 }
 
 function enable_system_services() {
+    echo "Enabling system services"
     for system_service in "${system_services[@]}"; do
         sudo systemctl enable --now "$system_service"
     done
 }
 
 function additional_setup() {
+    echo "Additional setup"
     powerprofilesctl set performance
 }
 
 function sync_dotfiles() {
     #TODO: Stow dotfiles
-
+    echo "Syncing dotfiles"
 }
 
 function apply_theme() {
+    echo "Applying theme"
     gsettings set org.gnome.desktop.interface gtk-theme "adw-gtk3-dark"
     gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
     gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 }
 
-
 function install_homebrew() {
     #TODO: Install homebrew
+    echo "Installing homebrew"
 
 }
 
-install_core_packages()
-install_user_packages()
-install_aur_packages()
-enable_system_services()
-enable_user_services()
-additional_setup()
-sync_dotfiles()
-apply_theme()
-install_homebrew()
+install_core_packages
+install_user_packages
+install_aur_packages
+enable_system_servicesg
+enable_user_servicesg
+additional_setupg
+sync_dotfilesg
+apply_themeg
+install_homebrewg
