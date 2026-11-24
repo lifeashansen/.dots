@@ -140,7 +140,7 @@ function install_aur_packages() {
 function add_groups() {
     echo "Adding user to groups"
     for group in "${groups[@]}"; do
-        sudo usermod -aG "$username" "$group"
+        sudo usermod -aG "$group" "$username"
     done
 }
 
@@ -177,15 +177,25 @@ function apply_theme() {
 
 function install_homebrew() {
     echo "Installing homebrew"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+}
 
+function install_spicetify() {
+    echo "Installing spicetify"
+    sudo chmod a+wr /opt/spotify
+    sudo chmod a+wr /opt/spotify/Apps -R
+    curl -fsSL https://raw.githubusercontent.com/spicetify/cli/main/install.sh | sh
+    spicetify backup apply
 }
 
 install_core_packages
 install_user_packages
 install_aur_packages
-enable_system_servicesg
-enable_user_servicesg
-additional_setupg
-sync_dotfilesg
-apply_themeg
-install_homebrewg
+enable_system_services
+enable_user_services
+add_groups
+additional_setup
+sync_dotfiles
+apply_theme
+install_homebrew
+install_spicetify
