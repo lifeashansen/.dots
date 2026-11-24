@@ -68,7 +68,6 @@ declare -a user_packages=(
     "gnome-calculator"
     "lua"
     "nodejs"
-    "gucview"
     "obs-studio"
     "mpv"
     "mpv-mpris"
