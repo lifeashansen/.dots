@@ -59,6 +59,7 @@ declare -a core_packages=(
 )
 
 declare -a user_packages=(
+    "zed"
     "android-tools"
     "ddcutil"
     "lorem"
