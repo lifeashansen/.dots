@@ -103,10 +103,10 @@ declare -a user_packages=(
     "cloudflare-warp-bin"
     "cmake"
     "make"
-    "dbeaver"
     "drawio-desktop"
     "pear-desktop"
     "shfmt"
+    "blender"
 )
 
 declare -a user_packages_aur=(
@@ -176,7 +176,6 @@ function apply_theme() {
 }
 
 function install_homebrew() {
-    #TODO: Install homebrew
     echo "Installing homebrew"
 
 }
